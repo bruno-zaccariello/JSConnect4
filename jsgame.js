@@ -113,8 +113,6 @@ function makeMove(button) {
     var list = positions[0]
     var index = 0
     
-    moves++
-
     // Make the index travel upwards
     // Searching for the first empty spot
     var invalid = false
@@ -126,6 +124,9 @@ function makeMove(button) {
     // Warning of invalid move if the list is full
     if (invalid) { alert('Movimento Inválido') } 
     else {
+        // Add a move to the total
+        moves++
+        
         // Updates grid and color of the buttonturn
         var color = players[turn].color
         grid[list][index] = color
