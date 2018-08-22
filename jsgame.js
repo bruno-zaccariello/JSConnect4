@@ -33,6 +33,7 @@ function changePNames() {
     
     players.p1.name = person1
     players.p2.name = person2
+    $('#player').html(players[turn].name).css('color', players[turn].color)
 }
 
 var turn = 'p1'
