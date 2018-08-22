@@ -27,6 +27,14 @@ var players = {
     p2: {name: person2, color: 'blue'}
 }
 
+function changePNames() {
+    var person1 = prompt("Please enter your name", "Player 1");
+    var person2 = prompt("Please enter your name", "Player 2");
+    
+    players.p1.name = person1
+    players.p2.name = person2
+}
+
 var turn = 'p1'
 
 function chkSequence(a, b, c, d) {
