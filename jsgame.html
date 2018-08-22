@@ -1,0 +1,43 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        #board {
+            display: flex;
+            flex-flow: row nowrap;
+            margin: auto auto;
+            width: 700px;
+        }
+
+        .grid_view {
+            border: 1px solid black;
+            width: 100px;
+            display: grid;
+            grid-gap: 2px;
+            grid-template-rows: repeat(5, 100px);
+        }
+
+        .item {
+            border-color: 1px solid black;
+            border-radius: 50%;
+            background-color: white;
+            cursor: pointer;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Connect 4</h1>
+
+
+    <h2 style="text-align: center;"><span id="player"></span> Turn </h2>
+    <div style="background-color: black;" id="board">
+    </div>
+
+
+    <script src="jsgame.js"></script>
+</body>
+</html>
