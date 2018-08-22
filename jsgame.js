@@ -10,14 +10,7 @@ var grid = [
     [0,0,0,0,0],
     ]
 
-function resetGrid() {
-    for (var list = 0; list < grid.length; list++) {
-        for (var el = 0; el < grid[list].length; el++) {
-            grid[list][el] = 0
-        }
-    }
-    return grid
-}
+var moves = 0
 
 var person1 = prompt("Please enter your name", "Player 1");
 var person2 = prompt("Please enter your name", "Player 2");
@@ -37,6 +30,17 @@ function changePNames() {
 }
 
 var turn = 'p1'
+
+// Functions
+
+function resetGrid() {
+    for (var list = 0; list < grid.length; list++) {
+        for (var el = 0; el < grid[list].length; el++) {
+            grid[list][el] = 0
+        }
+    }
+    return grid
+}
 
 function chkSequence(a, b, c, d) {
     return ( (a != 0) && (a == b) && (a == c) && (a == d) )
@@ -108,6 +112,8 @@ function makeMove(button) {
     var positions = $(button).attr('pos').split(':')
     var list = positions[0]
     var index = 0
+    
+    moves++
 
     // Make the index travel upwards
     // Searching for the first empty spot
@@ -130,6 +136,9 @@ function makeMove(button) {
         if (chkWinner(list, index)) {
             alert(players[turn].name + ' venceu !');
             endGame()
+        } else if (moves == 35) {
+            alert('It is a draw !')
+            endGame()
         } else {
             changeTurn()
         }
@@ -138,6 +147,7 @@ function makeMove(button) {
 
 function endGame() {
     $('#board').empty();
+    moves = 0  ;
     resetGrid();
     startGame();
 }
