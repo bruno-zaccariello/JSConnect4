@@ -1,2 +1,3 @@
 # JSConnect4
-Connect 4 made in javascript and html
+Try it out!
+https://bruno-zaccariello.github.io/JSConnect4/
